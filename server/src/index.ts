@@ -3,6 +3,7 @@ import express, { Application } from 'express'
 import { connectDatabase } from './database'
 import { ApolloServer } from 'apollo-server-express'
 import { typeDefs, resolvers } from './graphql'
+
 // import { listings } from './listings'
 
 // const app = express()
@@ -19,8 +20,8 @@ const mount = async (app: Application) => {
 
   app.listen(PORT, () => console.log(`[app]: http://localhost:${PORT}`))
 
-  const listings = await db.listings.find({}).toArray()
-  console.log(listings)
+  //   const listings = await db.listings.find({}).toArray()
+  //   console.log(listings)
 }
 
 mount(express())
