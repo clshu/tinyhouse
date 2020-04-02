@@ -3,6 +3,7 @@ import { render } from 'react-dom'
 import ApolloClient from 'apollo-boost'
 import { ApolloProvider } from '@apollo/react-hooks'
 import { Listings } from './sections'
+import './styles/index.css'
 
 import * as serviceWorker from './serviceWorker'
 
