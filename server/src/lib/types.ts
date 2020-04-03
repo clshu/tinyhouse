@@ -40,6 +40,7 @@ export interface Listing {
 export interface User {
   _id: string // From OAuth, a string
   token: string
+  name: string
   avatar: string
   contact: string
   walletId?: string
