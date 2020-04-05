@@ -1,0 +1,3 @@
+# tinyhouse
+
+See WARNING.md
