@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { render } from 'react-dom'
 import ApolloClient from 'apollo-boost'
-import { ApolloProvider } from '@apollo/react-hooks'
+import { ApolloProvider, useMutation } from '@apollo/react-hooks'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { Affix } from 'antd'
 import {
@@ -15,6 +15,11 @@ import {
   AppHeader,
 } from './sections'
 import './styles/index.css'
+import { LOG_IN } from './lib/graphql/mutations'
+import {
+  LogIn as LogInData,
+  LogInVariables,
+} from './lib/graphql/mutations/LogIn/__generated__/LogIn'
 
 import { Viewer } from './lib/types'
 
@@ -28,10 +33,37 @@ const initialViewer: Viewer = {
 
 const client = new ApolloClient({
   uri: '/api',
+  request: async (operation) => {
+    const token = sessionStorage.getItem('token')
+    operation.setContext({
+      headers: {
+        'X-CSRF-TOKEN': token || '',
+      },
+    })
+  },
 })
 
 const App = () => {
   const [viewer, setViewer] = useState<Viewer>(initialViewer)
+  const [logIn, { error }] = useMutation<LogInData, LogInVariables>(LOG_IN, {
+    onCompleted: (data) => {
+      if (data && data.logIn) {
+        setViewer(data.logIn)
+
+        if (data.logIn.token) {
+          sessionStorage.setItem('token', data.logIn.token)
+        } else {
+          sessionStorage.removeItem('token')
+        }
+      }
+    },
+  })
+
+  const logInRef = useRef(logIn)
+
+  useEffect(() => {
+    logInRef.current()
+  }, [])
 
   return (
     <Router>
