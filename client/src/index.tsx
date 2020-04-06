@@ -45,6 +45,8 @@ const client = new ApolloClient({
 
 const App = () => {
   const [viewer, setViewer] = useState<Viewer>(initialViewer)
+  // TODO
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [logIn, { error }] = useMutation<LogInData, LogInVariables>(LOG_IN, {
     onCompleted: (data) => {
       if (data && data.logIn) {
@@ -80,7 +82,11 @@ const App = () => {
           path="/login"
           render={(props) => <Login {...props} setViewer={setViewer} />}
         />
-        <Route exact path="/user/:id" component={User} />
+        <Route
+          exact
+          path="/user/:id"
+          render={(props) => <User {...props} viewer={viewer} />}
+        />
         <Route component={NotFound} />
       </Switch>
     </Router>
