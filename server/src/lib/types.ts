@@ -2,7 +2,7 @@ import { ObjectId, Collection } from 'mongodb'
 
 export enum ListingType {
   Apartment = 'APARTMENT',
-  House = 'HOUSE'
+  House = 'HOUSE',
 }
 
 interface BookingsIndexMonth {
@@ -47,6 +47,7 @@ export interface User {
   income: number
   bookings: ObjectId[]
   listings: ObjectId[]
+  authorized?: boolean
 }
 
 export interface Booking {

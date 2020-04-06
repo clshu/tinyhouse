@@ -4,7 +4,6 @@ import { Request, Response } from 'express'
 import { Viewer, Database, User } from '../../../lib/types'
 import { Google } from '../../../lib/api'
 import { LogInArgs } from './types'
-import { ReplOptions } from 'repl'
 
 const cookieOptions = {
   httpOnly: true,
