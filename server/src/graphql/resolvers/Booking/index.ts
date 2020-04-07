@@ -1,7 +1,7 @@
 import { IResolvers } from 'apollo-server-express'
 import { Database, Booking, Listing } from '../../../lib/types'
 
-export const bookingResolver: IResolvers = {
+export const bookingResolvers: IResolvers = {
   Booking: {
     id: (booking: Booking): string => {
       return booking._id.toString()
