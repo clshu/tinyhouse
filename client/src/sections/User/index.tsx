@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { RouteComponentProps } from 'react-router-dom'
 import { useQuery } from '@apollo/react-hooks'
 import { Col, Layout, Row } from 'antd'
 import { USER } from '../../lib/graphql/queries'
-import { UserProfile } from './components'
+import { UserProfile, UserBookings, UserListings } from './components'
 import { Viewer } from '../../lib/types'
 import { ErrorBanner, PageSkeleton } from '../../lib/components'
 
@@ -22,18 +22,47 @@ interface Props {
 
 const { Content } = Layout
 
+const PAGE_LIMIT = 4
+
 export const User = ({
   match,
   viewer,
 }: RouteComponentProps<MatchParams> & Props) => {
+  const [listingsPage, setListingsPage] = useState(1)
+  const [bookingsPage, setBookingsPage] = useState(1)
+
   const { data, loading, error } = useQuery<UserData, UserVariables>(USER, {
     variables: {
       id: match.params.id,
+      bookingsPage,
+      listingsPage,
+      limit: PAGE_LIMIT,
     },
   })
 
   const user = data ? data.user : null
   const viewerIsUser = viewer.id === match.params.id
+
+  const userListings = user ? user.listings : null
+  const userBookings = user ? user.bookings : null
+
+  const userListingsElement = userListings ? (
+    <UserListings
+      userListings={userListings}
+      listingsPage={listingsPage}
+      limit={PAGE_LIMIT}
+      setListingsPage={setListingsPage}
+    />
+  ) : null
+
+  const userBookingsElement = userListings ? (
+    <UserBookings
+      userBookings={userBookings}
+      bookingsPage={bookingsPage}
+      limit={PAGE_LIMIT}
+      setBookingsPage={setBookingsPage}
+    />
+  ) : null
 
   const userProfileElement = user ? (
     <UserProfile user={user} viewerIsUser={viewerIsUser} />
@@ -60,6 +89,10 @@ export const User = ({
     <Content className="user">
       <Row gutter={12} justify="space-between">
         <Col xs={24}>{userProfileElement}</Col>
+        <Col xs={24}>
+          {userListingsElement}
+          {userBookingsElement}
+        </Col>
       </Row>
     </Content>
   )
