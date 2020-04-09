@@ -17,8 +17,8 @@ const users: User[] = [
     listings: [
       new ObjectId('5d378db94e84753160e08b31'),
       new ObjectId('5d378db94e84753160e08b4b'),
-      new ObjectId('5d378db94e84753160e08b4c')
-    ]
+      new ObjectId('5d378db94e84753160e08b4c'),
+    ],
   },
   {
     _id: '5d378db94e84753160e08b56',
@@ -42,8 +42,8 @@ const users: User[] = [
       new ObjectId('5d378db94e84753160e08b50'),
       new ObjectId('5d378db94e84753160e08b51'),
       new ObjectId('5d378db94e84753160e08b53'),
-      new ObjectId('5d378db94e84753160e08b54')
-    ]
+      new ObjectId('5d378db94e84753160e08b54'),
+    ],
   },
   {
     _id: '5d378db94e84753160e08b57',
@@ -65,8 +65,8 @@ const users: User[] = [
       new ObjectId('5d378db94e84753160e08b3e'),
       new ObjectId('5d378db94e84753160e08b47'),
       new ObjectId('5d378db94e84753160e08b48'),
-      new ObjectId('5d378db94e84753160e08b4d')
-    ]
+      new ObjectId('5d378db94e84753160e08b4d'),
+    ],
   },
   {
     _id: '5d378db94e84753160e08b58',
@@ -81,8 +81,8 @@ const users: User[] = [
     listings: [
       new ObjectId('5d378db94e84753160e08b3f'),
       new ObjectId('5d378db94e84753160e08b40'),
-      new ObjectId('5d378db94e84753160e08b44')
-    ]
+      new ObjectId('5d378db94e84753160e08b44'),
+    ],
   },
   {
     _id: '5d378db94e84753160e08b59',
@@ -103,9 +103,9 @@ const users: User[] = [
       new ObjectId('5d378db94e84753160e08b49'),
       new ObjectId('5d378db94e84753160e08b4e'),
       new ObjectId('5d378db94e84753160e08b4f'),
-      new ObjectId('5d378db94e84753160e08b52')
-    ]
-  }
+      new ObjectId('5d378db94e84753160e08b52'),
+    ],
+  },
 ]
 const listings: Listing[] = [
   {
@@ -116,7 +116,7 @@ const listings: Listing[] = [
     image:
       'https://res.cloudinary.com/tiny-house/image/upload/v1560641352/mock/Toronto/toronto-listing-1_exv0tf.jpg',
     host: '5d378db94e84753160e08b57',
-    type: ListingType.Apartment,
+    type: ListingType.APARTMENT,
     address: '3210 Scotchmere Dr W, Toronto, ON, CA',
     country: 'Canada',
     admin: 'Ontario',
@@ -124,7 +124,7 @@ const listings: Listing[] = [
     bookings: [],
     bookingsIndex: {},
     price: 12424,
-    numOfGuests: 3
+    numOfGuests: 3,
   },
   {
     _id: new ObjectId('5d378db94e84753160e08b31'),
@@ -134,7 +134,7 @@ const listings: Listing[] = [
     image:
       'https://res.cloudinary.com/tiny-house/image/upload/v1560641351/mock/Toronto/toronto-listing-2_aeg1rw.jpg',
     host: '5d378db94e84753160e08b55',
-    type: ListingType.Apartment,
+    type: ListingType.APARTMENT,
     address: '7009 Strawberry Street, Toronto, ON, CA',
     country: 'Canada',
     admin: 'Ontario',
@@ -142,7 +142,7 @@ const listings: Listing[] = [
     bookings: [],
     bookingsIndex: {},
     price: 15806,
-    numOfGuests: 3
+    numOfGuests: 3,
   },
   {
     _id: new ObjectId('5d378db94e84753160e08b32'),
@@ -152,7 +152,7 @@ const listings: Listing[] = [
     image:
       'https://res.cloudinary.com/tiny-house/image/upload/v1560641352/mock/Toronto/toronto-listing-3_eyftou.jpg',
     host: '5d378db94e84753160e08b57',
-    type: ListingType.House,
+    type: ListingType.HOUSE,
     address: '8110 Rockaway Ave, Toronto, ON, CA',
     country: 'Canada',
     admin: 'Ontario',
@@ -160,7 +160,7 @@ const listings: Listing[] = [
     bookings: [],
     bookingsIndex: {},
     price: 4055,
-    numOfGuests: 2
+    numOfGuests: 2,
   },
   {
     _id: new ObjectId('5d378db94e84753160e08b33'),
@@ -170,7 +170,7 @@ const listings: Listing[] = [
     image:
       'https://res.cloudinary.com/tiny-house/image/upload/v1560641352/mock/Toronto/toronto-listing-4_ei1ngz.jpg',
     host: '5d378db94e84753160e08b59',
-    type: ListingType.Apartment,
+    type: ListingType.APARTMENT,
     address: '9531 Prince Road, Toronto, ON, CA',
     country: 'Canada',
     admin: 'Ontario',
@@ -178,7 +178,7 @@ const listings: Listing[] = [
     bookings: [],
     bookingsIndex: {},
     price: 21292,
-    numOfGuests: 4
+    numOfGuests: 4,
   },
   {
     _id: new ObjectId('5d378db94e84753160e08b34'),
@@ -188,7 +188,7 @@ const listings: Listing[] = [
     image:
       'https://res.cloudinary.com/tiny-house/image/upload/v1560641350/mock/Toronto/toronto-listing-5_vbmepz.jpg',
     host: '5d378db94e84753160e08b57',
-    type: ListingType.House,
+    type: ListingType.HOUSE,
     address: '43 Tallwood Drive, Toronto, ON, CA',
     country: 'Canada',
     admin: 'Ontario',
@@ -196,7 +196,7 @@ const listings: Listing[] = [
     bookings: [],
     bookingsIndex: {},
     price: 20930,
-    numOfGuests: 5
+    numOfGuests: 5,
   },
   {
     _id: new ObjectId('5d378db94e84753160e08b35'),
@@ -206,7 +206,7 @@ const listings: Listing[] = [
     image:
       'https://res.cloudinary.com/tiny-house/image/upload/v1560641350/mock/Toronto/toronto-listing-6_oiqiod.jpg',
     host: '5d378db94e84753160e08b57',
-    type: ListingType.House,
+    type: ListingType.HOUSE,
     address: '12 Morris Ave, Toronto, ON, CA',
     country: 'Canada',
     admin: 'Ontario',
@@ -214,17 +214,17 @@ const listings: Listing[] = [
     bookings: [],
     bookingsIndex: {},
     price: 16836,
-    numOfGuests: 2
+    numOfGuests: 2,
   },
   {
     _id: new ObjectId('5d378db94e84753160e08b36'),
-    title: 'Picturesque 2 Story House - great location',
+    title: 'Picturesque 2 Story HOUSE - great location',
     description:
       'Beautiful and picturesque 2 story house located only minutes away from the center of Midtown Toronto. Street level parking available at all times. With four beds and three baths, house accomodates up to 6 guests comfortably.',
     image:
       'https://res.cloudinary.com/tiny-house/image/upload/v1560641352/mock/Toronto/toronto-listing-7_p3a5ms.jpg',
     host: '5d378db94e84753160e08b57',
-    type: ListingType.House,
+    type: ListingType.HOUSE,
     address: '12 Morris Ave, Toronto, ON, CA',
     country: 'Canada',
     admin: 'Ontario',
@@ -232,7 +232,7 @@ const listings: Listing[] = [
     bookings: [],
     bookingsIndex: {},
     price: 2577,
-    numOfGuests: 1
+    numOfGuests: 1,
   },
   {
     _id: new ObjectId('5d378db94e84753160e08b37'),
@@ -242,7 +242,7 @@ const listings: Listing[] = [
     image:
       'https://res.cloudinary.com/tiny-house/image/upload/v1560641352/mock/Toronto/toronto-listing-8_awkmrj.jpg',
     host: '5d378db94e84753160e08b56',
-    type: ListingType.Apartment,
+    type: ListingType.APARTMENT,
     address: '20 Overlook St, Toronto, ON, CA',
     country: 'Canada',
     admin: 'Ontario',
@@ -250,7 +250,7 @@ const listings: Listing[] = [
     bookings: [],
     bookingsIndex: {},
     price: 23903,
-    numOfGuests: 4
+    numOfGuests: 4,
   },
   {
     _id: new ObjectId('5d378db94e84753160e08b38'),
@@ -260,7 +260,7 @@ const listings: Listing[] = [
     image:
       'https://res.cloudinary.com/tiny-house/image/upload/v1560641329/mock/Dubai/dubai-listing-1_znfu2h.jpg',
     host: '5d378db94e84753160e08b56',
-    type: ListingType.Apartment,
+    type: ListingType.APARTMENT,
     address: '100 Marina Ave, Dubai, United Arab Emirates',
     country: 'United Arab Emirates',
     admin: 'Dubai',
@@ -268,7 +268,7 @@ const listings: Listing[] = [
     bookings: [],
     bookingsIndex: {},
     price: 21982,
-    numOfGuests: 3
+    numOfGuests: 3,
   },
   {
     _id: new ObjectId('5d378db94e84753160e08b39'),
@@ -278,7 +278,7 @@ const listings: Listing[] = [
     image:
       'https://res.cloudinary.com/tiny-house/image/upload/v1560641327/mock/Dubai/dubai-listing-2_qc2kos.jpg',
     host: '5d378db94e84753160e08b59',
-    type: ListingType.Apartment,
+    type: ListingType.APARTMENT,
     address: '55 Emirates Hills Dr, Dubai, United Arab Emirates',
     country: 'United Arab Emirates',
     admin: 'Dubai',
@@ -286,7 +286,7 @@ const listings: Listing[] = [
     bookings: [],
     bookingsIndex: {},
     price: 18126,
-    numOfGuests: 5
+    numOfGuests: 5,
   },
   {
     _id: new ObjectId('5d378db94e84753160e08b3a'),
@@ -296,7 +296,7 @@ const listings: Listing[] = [
     image:
       'https://res.cloudinary.com/tiny-house/image/upload/v1560641328/mock/Dubai/dubai-listing-3_cumdal.jpg',
     host: '5d378db94e84753160e08b56',
-    type: ListingType.Apartment,
+    type: ListingType.APARTMENT,
     address: '400 Jumeirah Beach Dr, Dubai, United Arab Emirates',
     country: 'United Arab Emirates',
     admin: 'Dubai',
@@ -304,7 +304,7 @@ const listings: Listing[] = [
     bookings: [],
     bookingsIndex: {},
     price: 16162,
-    numOfGuests: 4
+    numOfGuests: 4,
   },
   {
     _id: new ObjectId('5d378db94e84753160e08b3b'),
@@ -314,7 +314,7 @@ const listings: Listing[] = [
     image:
       'https://res.cloudinary.com/tiny-house/image/upload/v1560641327/mock/Dubai/dubai-listing-4_olo6kt.jpg',
     host: '5d378db94e84753160e08b56',
-    type: ListingType.House,
+    type: ListingType.HOUSE,
     address: '19 Meadows Ave, Dubai, United Arab Emirates',
     country: 'United Arab Emirates',
     admin: 'Dubai',
@@ -322,7 +322,7 @@ const listings: Listing[] = [
     bookings: [],
     bookingsIndex: {},
     price: 11688,
-    numOfGuests: 5
+    numOfGuests: 5,
   },
   {
     _id: new ObjectId('5d378db94e84753160e08b3c'),
@@ -332,7 +332,7 @@ const listings: Listing[] = [
     image:
       'https://res.cloudinary.com/tiny-house/image/upload/v1560641329/mock/Dubai/dubai-listing-5_r2mxqj.jpg',
     host: '5d378db94e84753160e08b57',
-    type: ListingType.House,
+    type: ListingType.HOUSE,
     address: '291 Crescent Rd, Dubai, United Arab Emirates',
     country: 'United Arab Emirates',
     admin: 'Dubai',
@@ -340,7 +340,7 @@ const listings: Listing[] = [
     bookings: [],
     bookingsIndex: {},
     price: 16843,
-    numOfGuests: 4
+    numOfGuests: 4,
   },
   {
     _id: new ObjectId('5d378db94e84753160e08b3d'),
@@ -350,7 +350,7 @@ const listings: Listing[] = [
     image:
       'https://res.cloudinary.com/tiny-house/image/upload/v1560641329/mock/Dubai/dubai-listing-6_dirave.jpg',
     host: '5d378db94e84753160e08b56',
-    type: ListingType.Apartment,
+    type: ListingType.APARTMENT,
     address: '19 Araa Street, Dubai, United Arab Emirates',
     country: 'United Arab Emirates',
     admin: 'Dubai',
@@ -358,7 +358,7 @@ const listings: Listing[] = [
     bookings: [],
     bookingsIndex: {},
     price: 3078,
-    numOfGuests: 5
+    numOfGuests: 5,
   },
   {
     _id: new ObjectId('5d378db94e84753160e08b3e'),
@@ -368,7 +368,7 @@ const listings: Listing[] = [
     image:
       'https://res.cloudinary.com/tiny-house/image/upload/v1560641328/mock/Dubai/dubai-listing-7_vmmeyk.jpg',
     host: '5d378db94e84753160e08b57',
-    type: ListingType.Apartment,
+    type: ListingType.APARTMENT,
     address: '20 Marina Ave, Dubai, United Arab Emirates',
     country: 'United Arab Emirates',
     admin: 'Dubai',
@@ -376,7 +376,7 @@ const listings: Listing[] = [
     bookings: [],
     bookingsIndex: {},
     price: 12127,
-    numOfGuests: 2
+    numOfGuests: 2,
   },
   {
     _id: new ObjectId('5d378db94e84753160e08b3f'),
@@ -386,7 +386,7 @@ const listings: Listing[] = [
     image:
       'https://res.cloudinary.com/tiny-house/image/upload/v1560641331/mock/Dubai/dubai-listing-8_fg5dtb.jpg',
     host: '5d378db94e84753160e08b58',
-    type: ListingType.House,
+    type: ListingType.HOUSE,
     address: '15 Palm Jumeirah St, Dubai, United Arab Emirates',
     country: 'United Arab Emirates',
     admin: 'Dubai',
@@ -394,7 +394,7 @@ const listings: Listing[] = [
     bookings: [],
     bookingsIndex: {},
     price: 19242,
-    numOfGuests: 2
+    numOfGuests: 2,
   },
   {
     _id: new ObjectId('5d378db94e84753160e08b40'),
@@ -404,7 +404,7 @@ const listings: Listing[] = [
     image:
       'https://res.cloudinary.com/tiny-house/image/upload/v1560645376/mock/Los%20Angeles/los-angeles-listing-1_aikhx7.jpg',
     host: '5d378db94e84753160e08b58',
-    type: ListingType.House,
+    type: ListingType.HOUSE,
     address: '100 Hollywood Hills Dr, Los Angeles, California',
     country: 'United States',
     admin: 'California',
@@ -412,7 +412,7 @@ const listings: Listing[] = [
     bookings: [],
     bookingsIndex: {},
     price: 18127,
-    numOfGuests: 2
+    numOfGuests: 2,
   },
   {
     _id: new ObjectId('5d378db94e84753160e08b41'),
@@ -422,7 +422,7 @@ const listings: Listing[] = [
     image:
       'https://res.cloudinary.com/tiny-house/image/upload/v1560645375/mock/Los%20Angeles/los-angeles-listing-2_ygm2ai.jpg',
     host: '5d378db94e84753160e08b56',
-    type: ListingType.House,
+    type: ListingType.HOUSE,
     address: '999 Beverly Hills Ave, Los Angeles, California',
     country: 'United States',
     admin: 'California',
@@ -430,7 +430,7 @@ const listings: Listing[] = [
     bookings: [],
     bookingsIndex: {},
     price: 22707,
-    numOfGuests: 5
+    numOfGuests: 5,
   },
   {
     _id: new ObjectId('5d378db94e84753160e08b42'),
@@ -439,7 +439,7 @@ const listings: Listing[] = [
     image:
       'https://res.cloudinary.com/tiny-house/image/upload/v1560645376/mock/Los%20Angeles/los-angeles-listing-3_wtzssz.jpg',
     host: '5d378db94e84753160e08b59',
-    type: ListingType.Apartment,
+    type: ListingType.APARTMENT,
     address: '4262 Rainbow Road, Los Angeles, California',
     country: 'United States',
     admin: 'California',
@@ -447,7 +447,7 @@ const listings: Listing[] = [
     bookings: [],
     bookingsIndex: {},
     price: 11845,
-    numOfGuests: 4
+    numOfGuests: 4,
   },
   {
     _id: new ObjectId('5d378db94e84753160e08b43'),
@@ -457,7 +457,7 @@ const listings: Listing[] = [
     image:
       'https://res.cloudinary.com/tiny-house/image/upload/v1560645376/mock/Los%20Angeles/los-angeles-listing-4_nytk33.jpg',
     host: '5d378db94e84753160e08b56',
-    type: ListingType.Apartment,
+    type: ListingType.APARTMENT,
     address: '100 Nickel Rd, Los Angeles, California',
     country: 'United States',
     admin: 'California',
@@ -465,7 +465,7 @@ const listings: Listing[] = [
     bookings: [],
     bookingsIndex: {},
     price: 13623,
-    numOfGuests: 4
+    numOfGuests: 4,
   },
   {
     _id: new ObjectId('5d378db94e84753160e08b44'),
@@ -475,7 +475,7 @@ const listings: Listing[] = [
     image:
       'https://res.cloudinary.com/tiny-house/image/upload/v1560645375/mock/Los%20Angeles/los-angeles-listing-5_rll8i2.jpg',
     host: '5d378db94e84753160e08b58',
-    type: ListingType.House,
+    type: ListingType.HOUSE,
     address: '433 Zimmer Lane, Los Angeles, California',
     country: 'United States',
     admin: 'California',
@@ -483,7 +483,7 @@ const listings: Listing[] = [
     bookings: [],
     bookingsIndex: {},
     price: 6879,
-    numOfGuests: 3
+    numOfGuests: 3,
   },
   {
     _id: new ObjectId('5d378db94e84753160e08b45'),
@@ -493,7 +493,7 @@ const listings: Listing[] = [
     image:
       'https://res.cloudinary.com/tiny-house/image/upload/v1560645377/mock/Los%20Angeles/los-angeles-listing-6_unhtji.jpg',
     host: '5d378db94e84753160e08b59',
-    type: ListingType.House,
+    type: ListingType.HOUSE,
     address: '200 Copper Rd, Los Angeles, California',
     country: 'United States',
     admin: 'California',
@@ -501,7 +501,7 @@ const listings: Listing[] = [
     bookings: [],
     bookingsIndex: {},
     price: 14879,
-    numOfGuests: 5
+    numOfGuests: 5,
   },
   {
     _id: new ObjectId('5d378db94e84753160e08b46'),
@@ -511,7 +511,7 @@ const listings: Listing[] = [
     image:
       'https://res.cloudinary.com/tiny-house/image/upload/v1560645376/mock/Los%20Angeles/los-angeles-listing-7_qapmfv.jpg',
     host: '5d378db94e84753160e08b59',
-    type: ListingType.House,
+    type: ListingType.HOUSE,
     address: '301 Hillhaven Dr, Los Angeles, California',
     country: 'United States',
     admin: 'California',
@@ -519,7 +519,7 @@ const listings: Listing[] = [
     bookings: [],
     bookingsIndex: {},
     price: 2778,
-    numOfGuests: 5
+    numOfGuests: 5,
   },
   {
     _id: new ObjectId('5d378db94e84753160e08b47'),
@@ -529,7 +529,7 @@ const listings: Listing[] = [
     image:
       'https://res.cloudinary.com/tiny-house/image/upload/v1560645376/mock/Los%20Angeles/los-angeles-listing-8_q01xt6.jpg',
     host: '5d378db94e84753160e08b57',
-    type: ListingType.Apartment,
+    type: ListingType.APARTMENT,
     address: '100 Aviation Crescent, Los Angeles, California',
     country: 'United States',
     admin: 'California',
@@ -537,7 +537,7 @@ const listings: Listing[] = [
     bookings: [],
     bookingsIndex: {},
     price: 17777,
-    numOfGuests: 3
+    numOfGuests: 3,
   },
   {
     _id: new ObjectId('5d378db94e84753160e08b48'),
@@ -547,7 +547,7 @@ const listings: Listing[] = [
     image:
       'https://res.cloudinary.com/tiny-house/image/upload/v1560645408/mock/London/london-listing-1_yedylx.jpg',
     host: '5d378db94e84753160e08b57',
-    type: ListingType.Apartment,
+    type: ListingType.APARTMENT,
     address: '3807 North Bend River Rd, London, United Kingdom',
     country: 'United Kingdom',
     admin: 'England',
@@ -555,7 +555,7 @@ const listings: Listing[] = [
     bookings: [],
     bookingsIndex: {},
     price: 19462,
-    numOfGuests: 1
+    numOfGuests: 1,
   },
   {
     _id: new ObjectId('5d378db94e84753160e08b49'),
@@ -565,15 +565,15 @@ const listings: Listing[] = [
     image:
       'https://res.cloudinary.com/tiny-house/image/upload/v1560645409/mock/London/london-listing-2_mtfogm.jpg',
     host: '5d378db94e84753160e08b59',
-    type: ListingType.Apartment,
-    address: '1738 Old House Dr, London, United Kingdom',
+    type: ListingType.APARTMENT,
+    address: '1738 Old HOUSE Dr, London, United Kingdom',
     country: 'United Kingdom',
     admin: 'England',
     city: 'London',
     bookings: [],
     bookingsIndex: {},
     price: 9425,
-    numOfGuests: 4
+    numOfGuests: 4,
   },
   {
     _id: new ObjectId('5d378db94e84753160e08b4a'),
@@ -583,7 +583,7 @@ const listings: Listing[] = [
     image:
       'https://res.cloudinary.com/tiny-house/image/upload/v1560645410/mock/London/london-listing-3_hbqxs1.jpg',
     host: '5d378db94e84753160e08b56',
-    type: ListingType.House,
+    type: ListingType.HOUSE,
     address: '82 South Crescent, London, United Kingdom',
     country: 'United Kingdom',
     admin: 'England',
@@ -591,7 +591,7 @@ const listings: Listing[] = [
     bookings: [],
     bookingsIndex: {},
     price: 1918,
-    numOfGuests: 1
+    numOfGuests: 1,
   },
   {
     _id: new ObjectId('5d378db94e84753160e08b4b'),
@@ -601,7 +601,7 @@ const listings: Listing[] = [
     image:
       'https://res.cloudinary.com/tiny-house/image/upload/v1560645410/mock/London/london-listing-4_kwnohf.jpg',
     host: '5d378db94e84753160e08b55',
-    type: ListingType.House,
+    type: ListingType.HOUSE,
     address: '200 South Bend River Rd, London, United Kingdom',
     country: 'United States',
     admin: 'England',
@@ -609,7 +609,7 @@ const listings: Listing[] = [
     bookings: [],
     bookingsIndex: {},
     price: 11349,
-    numOfGuests: 5
+    numOfGuests: 5,
   },
   {
     _id: new ObjectId('5d378db94e84753160e08b4c'),
@@ -619,7 +619,7 @@ const listings: Listing[] = [
     image:
       'https://res.cloudinary.com/tiny-house/image/upload/v1560645408/mock/London/london-listing-5_jwyidl.jpg',
     host: '5d378db94e84753160e08b55',
-    type: ListingType.House,
+    type: ListingType.HOUSE,
     address: '44  Greyfriars Ave, London, United Kingdom',
     country: 'United Kingdom',
     admin: 'England',
@@ -627,7 +627,7 @@ const listings: Listing[] = [
     bookings: [],
     bookingsIndex: {},
     price: 23483,
-    numOfGuests: 4
+    numOfGuests: 4,
   },
   {
     _id: new ObjectId('5d378db94e84753160e08b4d'),
@@ -637,7 +637,7 @@ const listings: Listing[] = [
     image:
       'https://res.cloudinary.com/tiny-house/image/upload/v1560645409/mock/London/london-listing-6_dolofv.jpg',
     host: '5d378db94e84753160e08b57',
-    type: ListingType.House,
+    type: ListingType.HOUSE,
     address: '20 Peachfarm Rd, London, United Kingdom',
     country: 'United Kingdom',
     admin: 'England',
@@ -645,17 +645,17 @@ const listings: Listing[] = [
     bookings: [],
     bookingsIndex: {},
     price: 8721,
-    numOfGuests: 4
+    numOfGuests: 4,
   },
   {
     _id: new ObjectId('5d378db94e84753160e08b4e'),
     title: 'Tranquil, spacious condo apartment',
     description:
-      'Tranquil, spacious condo apartment with a modern look and feel. Apartment accomodates up to 4 guests with 2 beds and 2 baths.',
+      'Tranquil, spacious condo apartment with a modern look and feel. APARTMENT accomodates up to 4 guests with 2 beds and 2 baths.',
     image:
       'https://res.cloudinary.com/tiny-house/image/upload/v1560645409/mock/London/london-listing-7_pejnqb.jpg',
     host: '5d378db94e84753160e08b59',
-    type: ListingType.Apartment,
+    type: ListingType.APARTMENT,
     address: '20 Windsor St, London, United Kingdom',
     country: 'United Kingdom',
     admin: 'England',
@@ -663,7 +663,7 @@ const listings: Listing[] = [
     bookings: [],
     bookingsIndex: {},
     price: 5884,
-    numOfGuests: 1
+    numOfGuests: 1,
   },
   {
     _id: new ObjectId('5d378db94e84753160e08b4f'),
@@ -673,7 +673,7 @@ const listings: Listing[] = [
     image:
       'https://res.cloudinary.com/tiny-house/image/upload/v1560645409/mock/London/london-listing-8_hpckw4.jpg',
     host: '5d378db94e84753160e08b59',
-    type: ListingType.Apartment,
+    type: ListingType.APARTMENT,
     address: '15 Whitehorse Av, London, United Kingdom',
     country: 'United Kingdom',
     admin: 'England',
@@ -681,7 +681,7 @@ const listings: Listing[] = [
     bookings: [],
     bookingsIndex: {},
     price: 19649,
-    numOfGuests: 4
+    numOfGuests: 4,
   },
   {
     _id: new ObjectId('5d378db94e84753160e08b50'),
@@ -691,7 +691,7 @@ const listings: Listing[] = [
     image:
       'https://res.cloudinary.com/tiny-house/image/upload/v1560646219/mock/San%20Fransisco/san-fransisco-listing-1_qzntl4.jpg',
     host: '5d378db94e84753160e08b56',
-    type: ListingType.Apartment,
+    type: ListingType.APARTMENT,
     address: '200 Sunnyside Rd, San Fransisco, California',
     country: 'United States',
     admin: 'California',
@@ -699,7 +699,7 @@ const listings: Listing[] = [
     bookings: [],
     bookingsIndex: {},
     price: 22501,
-    numOfGuests: 5
+    numOfGuests: 5,
   },
   {
     _id: new ObjectId('5d378db94e84753160e08b51'),
@@ -709,7 +709,7 @@ const listings: Listing[] = [
     image:
       'https://res.cloudinary.com/tiny-house/image/upload/v1560646219/mock/San%20Fransisco/san-fransisco-listing-2_tvjygz.jpg',
     host: '5d378db94e84753160e08b56',
-    type: ListingType.Apartment,
+    type: ListingType.APARTMENT,
     address: '102 Parkdale Av, San Fransisco, California',
     country: 'United States',
     admin: 'California',
@@ -717,7 +717,7 @@ const listings: Listing[] = [
     bookings: [],
     bookingsIndex: {},
     price: 4051,
-    numOfGuests: 5
+    numOfGuests: 5,
   },
   {
     _id: new ObjectId('5d378db94e84753160e08b52'),
@@ -727,7 +727,7 @@ const listings: Listing[] = [
     image:
       'https://res.cloudinary.com/tiny-house/image/upload/v1560646219/mock/San%20Fransisco/san-fransisco-listing-3_z7w2jh.jpg',
     host: '5d378db94e84753160e08b59',
-    type: ListingType.Apartment,
+    type: ListingType.APARTMENT,
     address: '2 Bridgewater Rd, San Fransisco, California',
     country: 'United States',
     admin: 'California',
@@ -735,7 +735,7 @@ const listings: Listing[] = [
     bookings: [],
     bookingsIndex: {},
     price: 9162,
-    numOfGuests: 2
+    numOfGuests: 2,
   },
   {
     _id: new ObjectId('5d378db94e84753160e08b53'),
@@ -745,7 +745,7 @@ const listings: Listing[] = [
     image:
       'https://res.cloudinary.com/tiny-house/image/upload/v1560646430/mock/Cancun/cancun-listing-1_zihihs.jpg',
     host: '5d378db94e84753160e08b56',
-    type: ListingType.House,
+    type: ListingType.HOUSE,
     address: '100 Punta Nizuc Rd., Cancún, Mexico',
     country: 'Mexico',
     admin: 'Quintana Roo',
@@ -753,7 +753,7 @@ const listings: Listing[] = [
     bookings: [],
     bookingsIndex: {},
     price: 24842,
-    numOfGuests: 4
+    numOfGuests: 4,
   },
   {
     _id: new ObjectId('5d378db94e84753160e08b54'),
@@ -763,7 +763,7 @@ const listings: Listing[] = [
     image:
       'https://res.cloudinary.com/tiny-house/image/upload/v1560646289/mock/Cancun/cancun-listing-2_bsocu5.jpg',
     host: '5d378db94e84753160e08b56',
-    type: ListingType.Apartment,
+    type: ListingType.APARTMENT,
     address: '100 Punta Nizuc Rd., Cancún, Mexico',
     country: 'Mexico',
     admin: 'Quintana Roo',
@@ -771,8 +771,8 @@ const listings: Listing[] = [
     bookings: [],
     bookingsIndex: {},
     price: 23012,
-    numOfGuests: 1
-  }
+    numOfGuests: 1,
+  },
 ]
 
 const seed = async () => {
