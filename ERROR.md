@@ -1,3 +1,5 @@
+## Update: I found a workaround and get it to work.
+
 ## src/lib/api/Google.ts:61:49 - error TS2339: Property 'asPromise' does not exist on type 'RequestHandle<GeocodingResponse<GeocodingResponseStatus>>'.
 
 ## const res = await maps.geocode({ address }).asPromise()

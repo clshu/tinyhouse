@@ -1,6 +1,5 @@
 import { google } from 'googleapis'
-import { createClient, AddressComponent } from '@google/maps'
-// import { Client } from '@googlemaps/google-maps-services-js'
+import { Client } from '@googlemaps/google-maps-services-js'
 
 const { G_CLIENT_ID, G_CLIENT_SECRET, PUBLIC_URL } = process.env
 
@@ -10,10 +9,9 @@ const auth = new google.auth.OAuth2(
   `${PUBLIC_URL}/login`
 )
 
-const maps = createClient({ key: `${process.env.G_GEOCODE_KEY}` })
-// const maps = new Client({})
+const maps = new Client({})
 
-const parseAddress = (addressComponents: AddressComponent[]) => {
+const parseAddress = (addressComponents: any[]) => {
   let country = null
   let admin = null
   let city = null
@@ -60,26 +58,17 @@ export const Google = {
     return { user: data }
   },
   geocode: async (address: string) => {
-    const res = await maps.geocode({ address }).asPromise()
+    const res = await maps.geocode({
+      params: {
+        key: `${process.env.G_GEOCODE_KEY}`,
+        address
+      }
+    })
 
     if (res.status < 200 || res.status > 299) {
       throw new Error('failed to geocode address')
     }
 
-    return parseAddress(res.json.results[0].address_components)
+    return parseAddress(res.data.results[0].address_components)
   }
-  // geocode: (address: string) => {
-  //   const res = await maps.geocode({
-  //     params: {
-  //       key: `${process.env.G_GEOCODE_KEY}`,
-  //       address
-  //     }
-  //   })
-
-  //   if (res.status < 200 || res.status > 299) {
-  //     throw new Error('failed to geocode address')
-  //   }
-
-  //   return parseAddress(res.data.results[0].address_components)
-  // }
 }

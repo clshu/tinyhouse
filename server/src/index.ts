@@ -5,6 +5,7 @@ import cookieParser from 'cookie-parser'
 import { connectDatabase } from './database'
 import { ApolloServer } from 'apollo-server-express'
 import { typeDefs, resolvers } from './graphql'
+// import { Google } from './lib/api/Google'
 
 // import { listings } from './listings'
 
@@ -22,9 +23,12 @@ const mount = async (app: Application) => {
   const server = new ApolloServer({
     typeDefs,
     resolvers,
-    context: ({ req, res }) => ({ db, req, res }),
+    context: ({ req, res }) => ({ db, req, res })
   })
   server.applyMiddleware({ app, path: '/api' })
+
+  // const addr = await Google.geocode('1100 Congress Ave, Austin, TX 78701')
+  // console.log(addr)
 
   app.listen(PORT, () => console.log(`[app]: http://localhost:${PORT}`))
 
