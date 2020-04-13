@@ -2,8 +2,12 @@ import React, { useState } from 'react'
 import { useQuery } from '@apollo/react-hooks'
 import { Link, RouteComponentProps } from 'react-router-dom'
 import { Affix, Layout, List, Typography } from 'antd'
-import { ListingCard } from '../../lib/components'
-import { ListingsFilters, ListingsPagination } from './components'
+import { ListingCard, ErrorBanner } from '../../lib/components'
+import {
+  ListingsFilters,
+  ListingsPagination,
+  ListingsSkeleton
+} from './components'
 import { LISTINGS } from '../../lib/graphql/queries'
 import {
   Listings as ListingsData,
@@ -24,23 +28,57 @@ export const Listings = ({ match }: RouteComponentProps<MatchParams>) => {
   const [filter, setFilter] = useState(ListingsFilter.PRICE_LOW_TO_HIGH)
   const [page, setPage] = useState(1)
 
-  const { data } = useQuery<ListingsData, ListingsVariables>(LISTINGS, {
-    variables: {
-      location: match.params.location,
-      filter,
-      limit: PAGE_LIMIT,
-      page
+  const { data, loading, error } = useQuery<ListingsData, ListingsVariables>(
+    LISTINGS,
+    {
+      variables: {
+        location: match.params.location,
+        filter,
+        limit: PAGE_LIMIT,
+        page
+      }
     }
-  })
+  )
+
+  if (loading) {
+    return (
+      <Content className="listings">
+        <ListingsSkeleton />
+      </Content>
+    )
+  }
+
+  if (error) {
+    return (
+      <Content className="listings">
+        <ErrorBanner
+          description={`
+            We either couldn't find anything matching your search or have encountered an error.
+            If you're searching for a unique location, try searching again with more common keywords.
+          `}
+        />
+        <ListingsSkeleton />
+      </Content>
+    )
+  }
 
   const listings = data ? data.listings : null
   const listingsRegion = listings ? listings.region : null
 
-  /* tslint:disable */
   const listingsSectionElement =
     listings && listings.result.length ? (
       <div>
-        <ListingsFilters filter={filter} setFilter={setFilter} />
+        <Affix offsetTop={64}>
+          <div>
+            <ListingsPagination
+              total={listings.total}
+              page={page}
+              limit={PAGE_LIMIT}
+              setPage={setPage}
+            />
+            <ListingsFilters filter={filter} setFilter={setFilter} />
+          </div>
+        </Affix>
 
         <List
           grid={{
