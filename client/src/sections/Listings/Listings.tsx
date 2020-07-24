@@ -1,11 +1,11 @@
 import React from 'react'
 import { useQuery, useMutation } from 'react-apollo'
 import { gql } from 'apollo-boost'
+import { Listings as ListingsData } from './__generated__/Listings'
 import {
-  ListingsData,
   DeleteListingVariables,
-  DeleteListingData,
-} from './types'
+  DeleteListing as DeleteListingData,
+} from './__generated__/DeleteListing'
 
 interface Props {
   title: string
